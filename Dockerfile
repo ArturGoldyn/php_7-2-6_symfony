@@ -9,3 +9,5 @@ RUN chmod +x composer.phar
 RUN mv /composer.phar /usr/bin/composer.phar
 RUN ln /usr/bin/composer.phar /usr/bin/composer
 RUN apt-get install -yqq python
+RUN adduser --disabled-password -gecos "" application
+RUN su - application -c "composer global require hirak/prestissimo"
