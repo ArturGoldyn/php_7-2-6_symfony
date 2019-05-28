@@ -8,3 +8,4 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN chmod +x composer.phar
 RUN mv /composer.phar /usr/bin/composer.phar
 RUN ln /usr/bin/composer.phar /usr/bin/composer
+RUN apt-get install -yqq python
