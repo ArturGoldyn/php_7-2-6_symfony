@@ -11,3 +11,6 @@ RUN ln /usr/bin/composer.phar /usr/bin/composer
 RUN apt-get install -yqq python
 RUN adduser --disabled-password -gecos "" application
 RUN su - application -c "composer global require hirak/prestissimo"
+RUN apt-get install -yqq libmemcached-dev
+RUN pecl install memcached
+RUN echo "extension=memcached.so" > /usr/local/etc/php/conf.d/20_memcached.ini
